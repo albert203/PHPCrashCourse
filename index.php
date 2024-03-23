@@ -14,7 +14,7 @@
     <?php if (true) { ?>
         <h1>True</h1>
     <?php } ?>
-
+  
     <!-- Camel Case -->
     <?php 
         $fullName = "John Doe";

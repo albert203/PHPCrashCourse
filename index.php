@@ -6,79 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        echo "Hello World!";
-    ?>
+    <main>
+        <form action="includes/formhandler.php" method="post">
+            <label for="firstname">Firstname?</label>
+            <input required id="firstname" name="firstname" placeholder="Firstname..." type="text">
 
-    <!-- good syntax for incorperating html elements into php code -->
-    <?php if (true) { ?>
-        <h1>True</h1>
-    <?php } ?>
-  
-    <!-- Camel Case -->
-    <?php 
-        $fullName = "John Doe";
-        echo $fullName;
-    ?>
+            <label for="lastname">Lastname?</label>
+            <input name="lastname" type="text" id="lastname" placeholder="Lastname...">
 
-    <!-- Scalar types - one variable to it -->
-    <?php 
-        $string = "Hello World";
-        $int = 1000;
-        $float = 10.10;
-        $bool = true;
-    ?>
+            <label for="favouritepet">Favourite Pet?</label>
+            <select id="favouritepet" name="favouritepet">
+                <option value="none">None</option>
+                <option value="dog">Dog</option>
+                <option value="fish">Fish</option>
+                <option value="bird">Bird</option>
+                <option value="cat">Cat</option>
+            </select>
 
-    <!-- Array type -->
-    <?php 
-        $names = ["John", "Doe", "Jane"];
-        echo $names[2];
-    ?>
-
-    <!-- object type -->
-    <?php
-        // $object = new Car();
-    ?>
-
-    <p>My name is <?php echo $fullName; ?></p>
-
-    <!-- superglobal -->
-    <?php
-        echo $_SERVER['DOCUMENT_ROOT'];
-        echo "<br>";
-        echo $_SERVER['PHP_SELF'];
-        echo "<br>";
-        echo $_SERVER['SERVER_NAME'];
-        echo "<br>";
-        echo $_SERVER['REQUEST_METHOD'];
-    ?>
-
-    <?php 
-    // get a label 
-    // works with url: http://localhost/PHPCrashCourse/index.php?name=Jordan&eyecolour=blue
-        echo "<br>";
-        echo $_GET["name"];
-        echo "<br>";
-        echo $_GET["eyecolour"];
-    ?>
-
-    <!-- request method looks for GET, POST, COOKIE.. -->
-    <?php 
-        echo "<br>";
-        echo $_REQUEST["name"];
-    ?>
-
-    <!-- submitting -->
-    <?php 
-        echo "<br>";
-        echo $_FILES["name"];
-        echo "<br>";
-        echo $_COOKIE["name"];
-        echo "<br>";
-        echo $_SESSION["name"];
-        echo "<br>";
-        echo $_ENV["name"];
-    ?>
+            <button type="submit" name="submit">Submit</button>
+        </form>
+    </main>
 
 </body>
 </html>

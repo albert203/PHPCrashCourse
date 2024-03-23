@@ -7,22 +7,29 @@
 </head>
 <body>
     <?php 
-        //String Operator
-        $a = "Hello";
-        $b= "World";
-        echo $a . $b;
-
-        $c = $a . " " . $b;
-        echo "<br>";
-        echo $c;
-
         $a = 1;
-        echo "<br>";
-        echo $a;
-        echo "<br>";
-        echo ++$a;
-        echo "<br>";
-        echo $a++;
+
+        //match statement
+        $result = match($a){
+            1, 3, 5 => "one or three or five",
+            2 => "two",
+            default => "not one, three, or five",
+        };
+
+        echo $result;
+
+        //switch 
+        switch($a){
+            case 1:
+                echo "a is 1";
+                break;
+            case 2:
+                echo "a is 2";
+                break;
+            default:
+                echo "a is not 1 or 2";
+                break;
+        }
 
     ?>
 

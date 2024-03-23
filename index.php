@@ -42,5 +42,43 @@
 
     <p>My name is <?php echo $fullName; ?></p>
 
+    <!-- superglobal -->
+    <?php
+        echo $_SERVER['DOCUMENT_ROOT'];
+        echo "<br>";
+        echo $_SERVER['PHP_SELF'];
+        echo "<br>";
+        echo $_SERVER['SERVER_NAME'];
+        echo "<br>";
+        echo $_SERVER['REQUEST_METHOD'];
+    ?>
+
+    <?php 
+    // get a label 
+    // works with url: http://localhost/PHPCrashCourse/index.php?name=Jordan&eyecolour=blue
+        echo "<br>";
+        echo $_GET["name"];
+        echo "<br>";
+        echo $_GET["eyecolour"];
+    ?>
+
+    <!-- request method looks for GET, POST, COOKIE.. -->
+    <?php 
+        echo "<br>";
+        echo $_REQUEST["name"];
+    ?>
+
+    <!-- submitting -->
+    <?php 
+        echo "<br>";
+        echo $_FILES["name"];
+        echo "<br>";
+        echo $_COOKIE["name"];
+        echo "<br>";
+        echo $_SESSION["name"];
+        echo "<br>";
+        echo $_ENV["name"];
+    ?>
+
 </body>
 </html>

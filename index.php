@@ -6,26 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <main>
-        <form action="includes/formhandler.php" method="post">
-            <label for="firstname">Firstname?</label>
-            <input required id="firstname" name="firstname" placeholder="Firstname..." type="text">
+    <?php 
+        //String Operator
+        $a = "Hello";
+        $b= "World";
+        echo $a . $b;
 
-            <label for="lastname">Lastname?</label>
-            <input name="lastname" type="text" id="lastname" placeholder="Lastname...">
+        $c = $a . " " . $b;
+        echo "<br>";
+        echo $c;
 
-            <label for="favouritepet">Favourite Pet?</label>
-            <select id="favouritepet" name="favouritepet">
-                <option value="none">None</option>
-                <option value="dog">Dog</option>
-                <option value="fish">Fish</option>
-                <option value="bird">Bird</option>
-                <option value="cat">Cat</option>
-            </select>
+        $a = 1;
+        echo "<br>";
+        echo $a;
+        echo "<br>";
+        echo ++$a;
+        echo "<br>";
+        echo $a++;
 
-            <button type="submit" name="submit">Submit</button>
-        </form>
-    </main>
+    ?>
 
 </body>
 </html>

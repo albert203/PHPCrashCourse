@@ -9,7 +9,6 @@
     <?php
         echo "Hello World!";
     ?>
-
     <!-- good syntax for incorperating html elements into php code -->
     <?php if (true) { ?>
         <h1>True</h1>

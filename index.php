@@ -6,59 +6,69 @@
     <title>Document</title>
 </head>
 <body>
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-  <input type="number" name="num1" placeholder="Number 1" required>  <select name="operator">
-    <option value="add">Add</option>
-    <option value="subtract">Subtract</option>
-    <option value="multiply">Multiply</option>
-    <option value="divide">Divide</option>
-  </select>
-  <input type="number" name="num2" placeholder="Number 2" required>  <button type="submit" name="submit">Calculate</button>
-</form>
+    <?php
+        $fruits= [
+            "Apple",
+            "Banana", 
+            "Orange", 
+            "Mango", 
+            "Grapes"
+        ];
+        echo $fruits[0]; // echos Apple
+        echo "<br>";
+        $fruits[] = "Pineapple";
+        echo $fruits[5]; // echos Pineapple
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $result = 0;
-  $errors = false;
 
-  // Sanitize and validate input (combined and improved)
-  $num1 = filter_input(INPUT_POST, 'num1', FILTER_SANITIZE_NUMBER_FLOAT); // Sanitize and prevent type juggling
-  $num2 = filter_input(INPUT_POST, 'num2', FILTER_SANITIZE_NUMBER_FLOAT);
-  $operator = htmlspecialchars($_POST['operator']);
+        
+        // unset($fruits[1]); // removes Banana
+        // echo $fruits[1]; // echos Orange
 
-  if (empty($num1) || empty($num2) || empty($operator)) {
-    echo "<p style='color: red;'>Please fill in all fields.</p>";
-    $errors = true;
-  } else if (!is_numeric($num1) || !is_numeric($num2)) {
-    echo "<p style='color: red;'>Please enter valid numbers.</p>";
-    $errors = true;
-  } else if ($operator === 'divide' && $num2 === 0) {
-    echo "<p style='color: red;'>Division by zero is not allowed.</p>";
-    $errors = true;
-  } 
+        // array_spice($fruits, 0); // removes Apple
+        // echo $fruits[0]; // echos Orange
 
-  if (!$errors) {
-    switch ($operator) {
-      case 'add':
-        $result = $num1 + $num2;
-        break;
-      case 'subtract':
-        $result = $num1 - $num2;
-        break;
-      case 'multiply':
-        $result = $num1 * $num2;
-        break;
-      case 'divide':
-        $result = $num1 / $num2;
-        break;
-      default:
-        $result = "Invalid operator";
-        break;
-    }
-    echo "<p style='color: green;'>The result is: $result</p>";
-  }
-}
-?>
+        // Associative Arrays
+        $tasks = [
+            "laundry" => "Daniel",
+            "dishes" => "John",
+            "cleaning" => "Jane",
+            "vacuuming" => "Alice"
+        ];
+        echo "<br>";
+        echo $tasks['laundry']; // echos Daniel
 
+        print_r($tasks); // prints the entire array
+
+        sort($fruits); // sorts the array in ascending order
+        echo "<br>";
+        sort($tasks); // sorts the array in ascending order as an indexed array
+        print_r($fruits); // prints the entire array
+        echo "<br>";
+        print_r($tasks); // prints the entire array
+        
+        array_push($fruits, "Strawberry"); // adds Pineapple and Strawberry to the end of the array
+        echo "<br>";
+        print_r($fruits); // prints the entire array
+
+        // push a new task to the tasks associative array
+        $tasks["gardening"] = "Bob";
+        echo "<br>";
+        print_r($tasks); // prints the entire array
+
+        array_splice($fruits, 1, 0, "mango"); // adds mango to the 2nd index of the array
+        echo "<br>";
+        print_r($fruits); // prints the entire array
+
+        // nested arrays
+        $food = [
+            "meats" => ["beef", "chicken", "pork"],
+            "vegetables" => ["carrot", "cabbage", "onion"]
+        ];
+        echo "<br>";
+        echo $food['meats'][0]; // echos beef
+        echo "<br>";
+        echo $food['vegetables'][0]; // echos cabbage
+
+    ?>
 </body>
 </html>

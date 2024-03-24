@@ -7,67 +7,89 @@
 </head>
 <body>
     <?php
-        $fruits= [
-            "Apple",
-            "Banana", 
-            "Orange", 
-            "Mango", 
-            "Grapes"
-        ];
-        echo $fruits[0]; // echos Apple
+        $string = "Hello World";
+        echo strlen($string); // 11
         echo "<br>";
-        $fruits[] = "Pineapple";
-        echo $fruits[5]; // echos Pineapple
 
-
-        
-        // unset($fruits[1]); // removes Banana
-        // echo $fruits[1]; // echos Orange
-
-        // array_spice($fruits, 0); // removes Apple
-        // echo $fruits[0]; // echos Orange
-
-        // Associative Arrays
-        $tasks = [
-            "laundry" => "Daniel",
-            "dishes" => "John",
-            "cleaning" => "Jane",
-            "vacuuming" => "Alice"
-        ];
+        echo strpos($string, "World"); // 6
         echo "<br>";
-        echo $tasks['laundry']; // echos Daniel
 
-        print_r($tasks); // prints the entire array
+        echo str_replace("World", "PHP", $string); // Hello PHP
+        echo "<br>";
 
-        sort($fruits); // sorts the array in ascending order
+        echo strtoupper($string); // HELLO WORLD
         echo "<br>";
-        sort($tasks); // sorts the array in ascending order as an indexed array
-        print_r($fruits); // prints the entire array
-        echo "<br>";
-        print_r($tasks); // prints the entire array
-        
-        array_push($fruits, "Strawberry"); // adds Pineapple and Strawberry to the end of the array
-        echo "<br>";
-        print_r($fruits); // prints the entire array
 
-        // push a new task to the tasks associative array
-        $tasks["gardening"] = "Bob";
+        echo strtolower($string); // hello world
         echo "<br>";
-        print_r($tasks); // prints the entire array
 
-        array_splice($fruits, 1, 0, "mango"); // adds mango to the 2nd index of the array
+        echo substr($string, 6, -1); // Worl
         echo "<br>";
-        print_r($fruits); // prints the entire array
 
-        // nested arrays
-        $food = [
-            "meats" => ["beef", "chicken", "pork"],
-            "vegetables" => ["carrot", "cabbage", "onion"]
-        ];
+        print_r(explode(" ", $string)); // Array ( [0] => Hello [1] => World )
         echo "<br>";
-        echo $food['meats'][0]; // echos beef
+
+        echo implode(" ", ["Hello", "World"]); // Hello World
         echo "<br>";
-        echo $food['vegetables'][0]; // echos cabbage
+
+        $number = -5.5;
+        echo abs($number); // 5.5
+        echo "<br>";
+
+        echo round($number); // -5
+        echo "<br>";
+
+        echo ceil($number); // -5
+        echo "<br>";
+
+        echo floor($number); // -6
+        echo "<br>";
+
+        echo max(1, 2, 3, 4, 5); // 5
+        echo "<br>";
+
+        echo min(1, 2, 3, 4, 5); // 1
+        echo "<br>";
+
+        echo rand(1, 10); // Random number between 1 and 10
+        echo "<br>";
+
+        echo sqrt(16); // 4
+        echo "<br>";
+
+        echo pow(2, 3); // 8
+        echo "<br>";
+
+        echo log(10); // 2.302585092994
+        echo "<br>";
+
+        echo log10(10); // 1
+        echo "<br>";
+
+        $array = [1, 2, 3, 4, 5];
+        echo count($array); // 5
+        echo "<br>";
+
+        echo array_sum($array); // 15
+        echo "<br>";
+
+        print_r(array_reverse($array)); // Array ( [0] => 5 [1] => 4 [2] => 3 [3] => 2 [4] => 1 )
+        echo "<br>";
+
+        print_r(array_unique([1, 2, 2, 3, 3, 3])); // Array ( [0] => 1 [1] => 2 [3] => 3 )
+        echo "<br>";
+
+        print_r(array_merge([1, 2], [3, 4])); // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 )
+        echo "<br>";
+
+        echo date("Y-m-d H:i:s"); // your current time  in time format
+        echo "<br>";
+
+        echo time(); // current time in seconds since 1970, unix time
+        echo "<br>";
+
+        $date = date("Y-m-d H:i:s", time()); // current time in time format
+        echo strtotime($date); 
 
     ?>
 </body>

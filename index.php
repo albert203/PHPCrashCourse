@@ -11,32 +11,46 @@
 </head>
 <body>
     <?php
-        function sayHello($text){
-            echo $text;
-        }
-        sayHello("Hello World!");
-        echo "<br>";
 
-        $test = sayHello("test");
-        echo $test;
-        echo "<br>";
+        $test = "Daniel";
 
-        // can assign default value to the parameter
-        function sayhi($text = "Hi"){
-            return $text;
+        function testFunction() {
+            // global var
+            global $test;
+            return $test;
         }
 
-        echo sayhi();
-        echo "<br>";
+        // if it wasnt static it would return 1
+        function testFunction2() {
+            // static var
+            static $num = 0;
+            $num++;
 
-        // To enable strict variable type checking, declare the strict_types 
-        // directive at the top of the file
-        function add(int $a, int $b){
-            $result = ($a + $b);
-            return print_r($result);
+            return $num;
         }
-        add(1, 2);
+        echo testFunction2(); // 1
+        echo testFunction2(); // 2
 
+        class MyClass{
+            public $name = "Daniel";
+            public $age = 25;
+
+            public function __construct($name, $age){
+                $this->name = $name;
+                $this->age = $age;
+            }
+
+            public function getName(){
+                return $this->name;
+            }
+
+            public function getAge(){
+                return $this->age;
+            }
+        }
+
+
+        
     ?>
 </body>
 </html>

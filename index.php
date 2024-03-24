@@ -11,46 +11,10 @@
 </head>
 <body>
     <?php
-
-        $test = "Daniel";
-
-        function testFunction() {
-            // global var
-            global $test;
-            return $test;
-        }
-
-        // if it wasnt static it would return 1
-        function testFunction2() {
-            // static var
-            static $num = 0;
-            $num++;
-
-            return $num;
-        }
-        echo testFunction2(); // 1
-        echo testFunction2(); // 2
-
-        class MyClass{
-            public $name = "Daniel";
-            public $age = 25;
-
-            public function __construct($name, $age){
-                $this->name = $name;
-                $this->age = $age;
-            }
-
-            public function getName(){
-                return $this->name;
-            }
-
-            public function getAge(){
-                return $this->age;
-            }
-        }
-
-
-        
+    $name = "John Doe";
+        define('PI', 3.14);
+        define('PI', 4.14); // gives error becuse untrue
+        echo PI;
     ?>
 </body>
 </html>

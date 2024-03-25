@@ -1,6 +1,6 @@
 <?php 
     // DATA SOURCE NAME
-    $dsn = "msql:host=localhost;dbname=myfirstdatabase";
+    $dsn = "mysql:host=localhost;dbname=myfirstdatabase";
     $dbusername= "root";
     $dbpassword= "password";
 
@@ -13,3 +13,4 @@
     } catch (PDOException $e) {
         echo " PDO Conection Failed" . $e->getMessage();
     }
+?>

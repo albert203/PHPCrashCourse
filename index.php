@@ -17,5 +17,20 @@
         <input type="text" name="email" placeholder="Enter Email">
         <button type="submit" name="submit">Sign Up</button>
     </form>
+
+    <h3>Update User</h3>
+    <form action="includes/userupdate.inc.php" method="post">
+        <input type="text" name="username" placeholder="Enter Username">
+        <input type="password" name="pwd" placeholder="Enter Password">
+        <input type="text" name="email" placeholder="Enter Email">
+        <button type="submit" name="update">Update</button>
+    </form>
+
+    <h3>Delete User</h3>
+    <form action="includes/userdelete.inc.php" method="post">
+        <input type="text" name="username" placeholder="Enter Username">
+        <input type="password" name="pwd" placeholder="Enter Password">
+        <button type="submit" name="delete">Delete</button>
+    </form>
 </body>
 </html>

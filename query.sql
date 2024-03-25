@@ -31,3 +31,16 @@ DELETE FROM users WHERE id = 1;
 
 INSERT INTO comments (username, comment_text, users_id) VALUES 
 ("bassetest", "some random text", 2);
+
+SELECT username, email FROM users WHERE id = 2;
+
+SELECT * FROM users INNER JOIN comments ON users.id = comments.users_id;
+
+SELECT users.username, comments.comment_text, comments.created_at FROM users 
+INNER JOIN comments ON users.id = comments.users_id;
+
+-- shows all users
+SELECT * FROM users LEFT JOIN comments ON users.id = comments.users_id;
+
+-- shows all comments, rest of users with no comments linked by fkey will be null
+SELECT * FROM users RIGHT JOIN comments ON users.id = comments.users_id;

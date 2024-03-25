@@ -2,7 +2,7 @@
     // DATA SOURCE NAME
     $dsn = "msql:host=localhost;dbname=myfirstdatabase";
     $dbusername= "root";
-    $dbpassword= "";
+    $dbpassword= "password";
 
     // error handling
     try{ 

@@ -16,3 +16,18 @@ CREATE TABLE comments(
     PRIMARY KEY (id),
     FOREIGN KEY (users_id) REFERENCES users (id) ON DELETE SET NULL
 );
+
+
+INSERT INTO users (username, pwd, email) VALUES 
+("JonoR", "Dani123", "johndoe@gmail.com");
+
+INSERT INTO users (username, pwd, email) VALUES 
+("Basse", "basse123", "basse@gmail.com");
+
+UPDATE users SET username = "bassetest", pwd = "basse456" WHERE id = 2;
+
+-- I did not execute this statement, just for reference
+DELETE FROM users WHERE id = 1;
+
+INSERT INTO comments (username, comment_text, users_id) VALUES 
+("bassetest", "some random text", 2);

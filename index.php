@@ -32,5 +32,12 @@
         <input type="password" name="pwd" placeholder="Enter Password">
         <button type="submit" name="delete">Delete</button>
     </form>
+
+    <h3>Search For User</h3>
+    <form action="search.php" method="post">
+        <input type="text" name="usersearch" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+
 </body>
 </html>

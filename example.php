@@ -1,10 +1,13 @@
 <?php 
-   session_start();
-   $_SESSION['name'] = 'John';
+    session_start();
 
-    // unsets the global session variable but only in other pages
-    // session_destroy();
+    // unsets the global session variable
+    // unset($_SESSION['name']);
 
+    // purges all session data
+    // session_unset();
+
+   
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +18,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        echo "<p>Test<p>";
+    <?php 
         echo $_SESSION['name'];
     ?>
 </body>

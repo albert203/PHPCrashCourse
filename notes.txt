@@ -1,6 +1,0 @@
-People can sniff session cookies and hijack your session. This is a big problem.
-We need to use security to protect our session cookies. 
-We can use the `secure` flag to make sure that the session cookie is only sent over HTTPS. 
-This will prevent people from sniffing our session cookies.
-You also have cross site scripting attacks using javascript for example to 
-steal the session cookie.

@@ -1,10 +1,5 @@
 <?php 
-   session_start();
-   $_SESSION['name'] = 'John';
-
-    // unsets the global session variable but only in other pages
-    // session_destroy();
-
+   declare(strict_types=1);
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +10,12 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        echo "<p>Test<p>";
-        echo $_SESSION['name'];
-    ?>
+    <h3>Signup</h3>
+    <form action="includes/formhandler.inc.php" method="post">
+        <input type="text" name="username" placeholder="Enter Username">
+        <input type="password" name="pwd" placeholder="Enter Password">
+        <input type="text" name="email" placeholder="Enter Email">
+        <button type="submit" name="submit">Sign Up</button>
+    </form>
 </body>
 </html>
